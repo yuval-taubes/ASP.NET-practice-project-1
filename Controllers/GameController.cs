@@ -20,8 +20,17 @@ namespace WebApplication1.Controllers
         }
         public IActionResult DetailPage(int id)
         {
-            VideoGame videoGame = Repo.VideoGames.First(x => x.Id == id);
-            return View(videoGame);
+            //VideoGame videoGame = Repo.VideoGames.First(x => x.Id == id);
+            
+            VideoGame idMatched = null;
+            foreach (VideoGame videoGame in Repo.VideoGames)
+            {
+                if(id == videoGame.Id)
+                {
+                    idMatched = videoGame;
+                }
+            }
+            return View(idMatched);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
