@@ -18,19 +18,19 @@ namespace WebApplication1.Controllers
         {
             return View(Repo);
         }
-        public IActionResult DetailPage(int id)
+        public IActionResult DetailPage(string name)
         {
-            //VideoGame videoGame = Repo.VideoGames.First(x => x.Id == id);
-            
-            VideoGame idMatched = null;
-            foreach (VideoGame videoGame in Repo.VideoGames)
-            {
-                if(id == videoGame.Id)
-                {
-                    idMatched = videoGame;
-                }
-            }
-            return View(idMatched);
+            VideoGame videoGame = Repo.VideoGames.First(x => x.Title == name);
+
+            //VideoGame idMatched = Repo.VideoGames.First();
+            //foreach (VideoGame videoGame in Repo.VideoGames)
+            //{
+            //    if(id == videoGame.Id)
+            //    {
+            //        idMatched = videoGame;
+            //    }
+            //}
+            return View(videoGame);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

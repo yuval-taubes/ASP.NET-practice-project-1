@@ -4,4 +4,16 @@
 *@
 @{
 }
-<h1>@Model.Title</h1>
+
+<div class="text-center">
+    <h1>Details about @Model.Title</h1>
+    <ul>
+        <li> Title: @Model.Title</li>
+        <li> Price: @Model.Price</li>
+        <li> Studio: @Model.Studio.Name</li>
+        <li> Publisher: @Model.Publisher.Name</li>
+        <li> Age Rating: @Model.AgeRating years and older</li>
+        <li><a class="nav-link text-dark" asp-area="" asp-controller="Game" asp-action="Index">Back</a></li>
+        
+    </ul>
+</div>

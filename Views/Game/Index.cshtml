@@ -9,12 +9,13 @@
 <div class="text-center">
     <h1 class="display-4">Games List</h1>
     <ul>
-        @foreach(var videoGame in Model.VideoGames)
+        @foreach (var videoGame in Model.VideoGames)
         {
             <li>
-                <a class="nav-link text-dark" asp-area="" asp-controller="Game" asp-action="DetailPage" asp-route-id = "@videoGame.Id" >@videoGame.Title</a>
+                <a class="nav-link text-dark" asp-area="" asp-controller="Game" asp-action="DetailPage" asp-route-name="@videoGame.Title">@videoGame.Title</a>
             </li>
         }
+        <li><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Back</a></li>
     </ul>
 </div>
 
