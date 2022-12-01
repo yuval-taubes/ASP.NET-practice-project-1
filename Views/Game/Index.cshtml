@@ -2,6 +2,8 @@
 
 @{
     ViewData["Title"] = "Home Page";
+
+
 }
 
 <div class="text-center">
@@ -9,7 +11,11 @@
     <ul>
         @foreach(var videoGame in Model.VideoGames)
         {
-            <li>@videoGame.Title</li>
+            <li>
+                <a class="nav-link text-dark" asp-area="" asp-controller="Game" asp-action="DetailPage" asp-route-id = "@videoGame.Id" >@videoGame.Title</a>
+            </li>
         }
     </ul>
 </div>
+
+
